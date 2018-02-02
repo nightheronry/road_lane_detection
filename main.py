@@ -143,7 +143,8 @@ if __name__ == '__main__':
 
         test_img_dir = 'test_images'
         for test_img in os.listdir(test_img_dir):
-
+            if test_img =='.DS_Store':
+                continue
             frame = cv2.imread(os.path.join(test_img_dir, test_img))
             frame = cv2.resize(frame, (1280, 720))
             #img_undistorted = undistort(frame, mtx, dist, verbose=False)
